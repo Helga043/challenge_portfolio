@@ -19,29 +19,29 @@ My goal is to learn as much as possible about automated testing, have some pract
 > //*[text()="Scouts Panel"]
 
 ### Login_xpath
-> //*[@id="login"]
-> //*[@name="login"]
+> //*[@id="login"] <br />
+> //*[@name="login"] <br />
 > //*[@type="text"]
 
 ### Password_xpath
-> //*[@id="password"]
-> //*[@name="password"]
+> //*[@id="password"] <br />
+> //*[@name="password"] <br />
 > //*[@type="password"]
 
 ### Remind_password_xpath
-> //*[@id="__next"]/form/div/div[1]/a
-> //*[contains(@class, "MuiTypography-root MuiLink-root")]
+> //*[@id="__next"]/form/div/div[1]/a <br />
+> //*[contains(@class, "MuiTypography-root MuiLink-root")] <br />
 > //*[text()="Remind password"]
 
 ### Languages_dropdown_Polski_xpath
-> //*[@id="__next"]/form/div/div[2]/div/div
+> //*[@id="__next"]/form/div/div[2]/div/div <br />
 > //*[text()="Polski"]
 
 ### Languages_dropdown_English_xpath
-> //*[@id="__next"]/form/div/div[2]/div/div
+> //*[@id="__next"]/form/div/div[2]/div/div <br />
 > //*[text()="English"]
 
 ### Sign_in_button_xpath
-> //*[@id="__next"]/form/div/div[2]/button/span[2]
-> //*[contains(@class, "MuiTouchRipple-root")]
+> //*[@id="__next"]/form/div/div[2]/button/span[2] <br />
+> //*[contains(@class, "MuiTouchRipple-root")] <br />
 > //*[@type="submit"]/span[2]
