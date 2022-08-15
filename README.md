@@ -14,8 +14,8 @@ My goal is to learn as much as possible about automated testing, have some pract
 
 # Task 2: Selectors
 ### Scout_panel_heading_xpath
-> //*[@id="__next"]/form/div/div[1]/h5
-> //*[contains(@class, "MuiTypography-h5")]
+> //*[@id="__next"]/form/div/div[1]/h5 <br />
+> //*[contains(@class, "MuiTypography-h5")] <br />
 > //*[text()="Scouts Panel"]
 
 ### Login_xpath
