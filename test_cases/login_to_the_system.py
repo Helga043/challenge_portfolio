@@ -18,6 +18,8 @@ class TestLoginPage(unittest.TestCase):
         self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
+        self.user_login = LoginPage(self.driver)
+        self.dashboard_page = Dashboard(self.driver)
 
     def test_log_in_to_the_system(self):
         user_login = LoginPage(self.driver)
@@ -29,6 +31,27 @@ class TestLoginPage(unittest.TestCase):
         dashboard_page = Dashboard(self.driver)
         dashboard_page.title_of_page()
         time.sleep(5)
+
+    def test_log_in_with_invalid_data(self):
+        self.user_login.type_all_for_log_in('login', 'Pass123')
+        self.user_login.log_in_with_invalid_data_message()
+        self.user_login.title_of_page()
+        time.sleep(5)
+
+    def test_empty_password(self):
+        self.user_login.type_all_for_log_in('login', '')
+        self.user_login.empty_password_message()
+        self.user_login.title_of_page()
+        time.sleep(5)
+
+    def test_log_out_from_the_system(self):
+        self.user_login.type_all_for_log_in('user01@getnada.com', 'Test-1234')
+        self.dashboard_page.check_sign_out_button()
+        time.sleep(2)
+        self.dashboard_page.click_on_the_sign_out_button()
+        self.user_login.title_of_page()
+        time.sleep(3)
+
 
     @classmethod
     def tearDown(self):

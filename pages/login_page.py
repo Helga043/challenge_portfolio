@@ -10,6 +10,10 @@ class LoginPage(BasePage):
     title_of_box_xpath = "//*[@id='__next']/form/div/div[1]/h5"
     header_of_box = "Scouts Panel"
 
+    error_message_xpath = "//span[contains(@class, 'MuiTypography-root')]"
+    message_invalid_login_data = "Invalid Login or Password"
+    message_empty_password = "Fill the password field"
+
     def type_in_email(self, email):
         self.field_send_keys(self.login_field_xpath, email)
 
@@ -24,6 +28,21 @@ class LoginPage(BasePage):
 
     def check_title_of_header(self):
         self.assert_element_text(self.driver, self.title_of_box_xpath, self.header_of_box)
+
+    def type_all_for_log_in(self, email, password):
+        self.type_in_email(email)
+        self.type_in_password(password)
+        self.click_on_the_sign_in_button()
+
+    def log_in_with_invalid_data_message(self):
+        self.assert_element_text(self.driver, self.error_message_xpath, self.message_invalid_login_data)
+
+    def empty_password_message(self):
+        self.assert_element_text(self.driver, self.error_message_xpath, self.message_empty_password)
+
+
+
+
 
 
 
